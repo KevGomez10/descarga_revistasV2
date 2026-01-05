@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 import time
 
-URL = "https://pro.jornada.com.pe/ediciones"
+URL = "https://camacol.co/revista-urbana/107/Revista_Urbana_107.html"
 OUTPUT_FILE = "links.txt"
 MAX_PAGES = 60
 DELAY = 3
@@ -29,7 +29,7 @@ with sync_playwright() as p:
     page.on("response", handle_response)
 
     print("🌐 Abriendo visor...")
-    page.goto(URL, timeout=60000)
+    page.goto(URL, timeout=100000)
     time.sleep(6)
 
     for _ in range(MAX_PAGES):
